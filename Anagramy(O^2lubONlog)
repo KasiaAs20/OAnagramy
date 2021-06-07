@@ -1,0 +1,11 @@
+def are_anagrams(s1,s2,s3):
+
+
+    s1 = s1.replace(' ','').lower()#usuwa spacje
+    s2 = s2.replace(' ','').lower()
+    s3 = s3.replace(' ','').lower()
+
+    # Return sorted match.
+    if sorted(s1) == sorted(s2)==sorted(s3):#, jeśli zaczniemy od sortowania każdego ciągu alfabetycznie, od a do z i otrzymamy ten sam ciąg, to te trzy słowa są anagramami
+         return True
+    return False

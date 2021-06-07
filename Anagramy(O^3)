@@ -1,0 +1,26 @@
+def are_anagrams(a,b,c):
+    m=[]
+    n=[]
+    p=[]
+    for i in a:
+        if i!=' ': #  Miejsca  puste są pomijane
+         m+=[i] # Dodaje tylko litery do listy i ignoruje spacje
+    for i in b:
+        if i!=' ':
+            n+=[i]
+    for i in c:
+        if i != ' ':
+            p += [i]
+    if len(m)==len(n)==len(p) :#.Jezeli te trzy listy nie są takie same to nie są to angagramy wiec zwraca False
+        for i in range(len(m)):
+            for j in range(len(n)):
+                for g in range(len(p)):
+                 if m[i].lower()==n[j].lower()==p[g].lower:
+                    n.pop(g) #Jeżeli znaleziono litery znajdujące się w tych trzech listach to litera zostaje usunięta
+                    break
+
+        return True
+
+    # Jezeli podane słowa są anagramami to wszystkie litery zostaną usunięte i metoda zwróci True(ponieważ długość trzeciej listy jest 0 ).Jeżeli nie metoda zwróci False
+
+    return False
